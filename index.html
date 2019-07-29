@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+    <head>
+        <title>
+            kantor online
+        </title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu+Condensed&display=swap&subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+<body>
+    <header>
+        <h1>przelicznik walut</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>USD</li>
+            <li>AUD</li>
+            <li>SGD</li>
+            <li>EUR</li>
+            <li>CHF</li>
+            <li>GBP</li>
+        </ul>
+    </nav>
+    <section>
+        <div class="form">
+            <ul>
+                <li data-currency="USD"></li>
+                <li data-currency="EUR"></li>
+                <li data-currency="CHF"></li>
+                <li data-currency="GBP"></li>
+            </ul>
+            <div class="main-part-form">
+                <h2>Informacja</h2>
+                <span class="text">
+                    Z pomocą tego narzędzia możesz przeliczyć polską walute na zagraniczną jak i również zagraniczną na polską.
+                    Proszę wziąć pod uwage to, że przelicznik walut zaokrągla każdą wartość do dwóch liczb po przeicnku.
+                    Aktualne waluty na których można pracować to dolar amerykański, euro, frank szwajcarski oraz funt brytyjski.
+                </span>
+                <div class="row-with-main-button">
+                    <button type="button" class="main-button">klik</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contact">
+            <h3 class="header-of-contact-box">Kontakt</h3>
+            <div class="row">
+                <div class="container-icon">
+                    <span class="fas fa-map-marker-alt"></span>
+                </div>
+                <span class="address-data">&nbsp&nbspulica, miasto, kod pocztowy</span>
+            </div>
+            <div class="row">
+                <div class="container-icon">
+                    <span class="fas fa-phone-volume"></span>
+                </div>
+                <a href="tel: +48661098013">&nbsp&nbsp+48 661 - 098 - 013</a>
+            </div>
+            <div class="row without-margin-bottom">
+                <div class="container-icon">
+                    <span class="fas fa-envelope-open-text"></span>
+                </div>
+                <a href="mailto:sobolek66@gmail.com">&nbsp&nbspsobolek66@gmail.com</a>
+            </div>
+        </div>
+        <div class="more-info">
+            <h4 class="header-of-more-info">O narzędziu</h4>
+            <p class="text">
+                Narzędzie to korzysta z kursów walut pobieranych na bieżąco z API NBP.
+                W momecie aktualizacji kursów przez Narodowy Bank Centralny,
+                przelicznik walut automatycznie korzysta wtedy z najświeższych kursów walut jakie zostaną opublikowane danego dnia.
+                Jeśli zauważyłeś jakikolwiek błąd, proszę zgłoś to po przez wysłanie wiadomości drogą mailową.
+            </p>
+            <div class="row">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/kamil.sobolewski.96">
+                            <span class="fab fa-facebook"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/sobol3k">
+                            <span class="fab fa-github"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script src="js/change-form.js"></script>
+<script src="js/change-header-and-paragraph-form.js"></script>
+<script src="js/get-exchange-rates.js"></script>
+<script src="js/convert-currency.js"></script>
+<script src="js/get-date.js"></script>
+<script src="js/save-actual-exchange-rates.js"></script>
+<script src="js/get-exchange-rates-from-local-storage.js"></script>
+<script src="js/delete-local-storage.js"></script>
+</body>
+</html>

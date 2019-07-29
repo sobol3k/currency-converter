@@ -1,0 +1,747 @@
+/* main styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: #444444;
+}
+.opened-message-error::after {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 998;
+}
+header {
+  position: relative;
+  display: flex;
+  height: 150px;
+  width: 100%;
+  background: #666;
+}
+header h1 {
+  width: 100%;
+  align-self: center;
+  margin: 0 0 0 10px;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+header h1::after {
+  content: '';
+  display: block;
+  margin-top: 10px;
+  height: 5px;
+  width: 30%;
+  background: black;
+}
+nav {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #b3b3b3;
+  border-bottom: 3px solid #666;
+  font-family: 'Roboto', sans-serif;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  width: 65%;
+  height: 100%;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 40px 0 0;
+  height: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  list-style-type: none;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: #b3b3b3;
+  border-bottom: 3px solid #666;
+  font-family: 'Roboto', sans-serif;
+}
+section .form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  border-radius: 25px;
+  background: buttonface;
+  border: 1.5px solid #666;
+}
+section .form ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #666;
+}
+section .form ul li {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border-radius: 50%;
+  list-style-type: none;
+  transition: background-color, 300ms;
+  cursor: pointer;
+}
+section .form ul li:hover {
+  background: gold;
+}
+section .form ul li:hover::after {
+  content: attr(data-currency);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 150%;
+  width: 50px;
+  height: 20px;
+  padding: 2px 0 0 0;
+  background: #b3b3b3;
+  text-align: center;
+  font-weight: 600;
+}
+section .form .main-part-form {
+  position: relative;
+  height: 100%;
+}
+section .form .main-part-form h2 {
+  margin: 25px 0 15px 0;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+section .form .main-part-form p {
+  text-align: center;
+  color: orange;
+}
+section .form .main-part-form .fa-redo-alt {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transform: translateX(-5%) translateY(-5%);
+  font-size: 25px;
+  cursor: pointer;
+}
+section .form .main-part-form .fa-redo-alt:hover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: 15px;
+  border-top: 10px solid #b3b3b3;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  transform: rotate(90deg);
+}
+section .form .main-part-form .fa-redo-alt:hover::after {
+  content: attr(data-info);
+  display: block;
+  position: relative;
+  top: -25px;
+  left: 30px;
+  width: 90px;
+  height: 55px;
+  padding: 5px;
+  border-radius: 10px;
+  background: #b3b3b3;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+}
+section .form .main-part-form .text {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+section .form .main-part-form form {
+  display: flex;
+  flex-direction: column;
+}
+section .form .main-part-form form .row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+section .form .main-part-form form .row label {
+  display: block;
+  position: relative;
+}
+section .form .main-part-form form .row label .pln-input {
+  width: 300px;
+  height: 50px;
+  font-size: 18px;
+  padding: 2px 0 2px 2px;
+  outline: none;
+  border-top: none;
+  border-bottom: 0.75px solid #666;
+  border-left: none;
+  border-right: none;
+  background: buttonface;
+  text-align: center;
+}
+section .form .main-part-form form .row label .chf-input,
+section .form .main-part-form form .row label .gbp-input,
+section .form .main-part-form form .row label .usd-input,
+section .form .main-part-form form .row label .eur-input {
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  padding: 2px 0 2px 2px;
+  outline: none;
+  border-top: none;
+  border-bottom: 0.75px solid #666;
+  border-left: none;
+  border-right: none;
+  background: buttonface;
+  text-align: center;
+}
+section .form .main-part-form form .row-with-convert-button {
+  margin-top: 35px;
+  text-align: center;
+}
+section .form .main-part-form form .row-with-convert-button .pln-to-usd,
+section .form .main-part-form form .row-with-convert-button .pln-to-euro,
+section .form .main-part-form form .row-with-convert-button .pln-to-chf,
+section .form .main-part-form form .row-with-convert-button .pln-to-gbp {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #444444;
+  text-transform: uppercase;
+  transition: background 1s;
+  outline: none;
+  cursor: pointer;
+}
+section .form .main-part-form form .row-with-convert-button .pln-to-usd:hover,
+section .form .main-part-form form .row-with-convert-button .pln-to-euro:hover,
+section .form .main-part-form form .row-with-convert-button .pln-to-chf:hover,
+section .form .main-part-form form .row-with-convert-button .pln-to-gbp:hover {
+  background: #999999;
+}
+section .form .main-part-form .row-with-main-button {
+  perspective: 300px;
+  margin-top: 25px;
+  text-align: center;
+}
+section .form .main-part-form .main-button {
+  width: 90px;
+  height: 40px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: 600;
+  transition: background-color, 600ms;
+  animation-name: button;
+  animation-iteration-count: infinite;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
+  cursor: pointer;
+}
+section .form .main-part-form .main-button:hover {
+  background: #b3b3b3;
+}
+footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #444444;
+  font-family: 'Lato', sans-serif;
+}
+footer .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  width: 400px;
+  height: 100%;
+}
+footer .contact .header-of-contact-box {
+  font-size: 25px;
+}
+footer .contact .header-of-contact-box::after {
+  content: '';
+  margin-top: 5px;
+  display: block;
+  width: 30%;
+  height: 4px;
+  background: black;
+}
+footer .contact .row:not(without-margin-bottom) {
+  margin-bottom: 35px;
+}
+footer .contact .row {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+footer .contact .row .address-data {
+  color: white;
+}
+footer .contact .row a {
+  text-decoration: none;
+  font-size: 15px;
+  color: deepskyblue;
+}
+footer .contact .row .container-icon {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  background: #333333;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+footer .contact .row .container-icon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+}
+footer .more-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 650px;
+  height: 100%;
+  padding: 45px;
+}
+footer .more-info .header-of-more-info {
+  margin: 0;
+  font-size: 25px;
+}
+footer .more-info .header-of-more-info::after {
+  content: '';
+  display: block;
+  width: 30%;
+  height: 4px;
+  margin-top: 5px;
+  background: black;
+}
+footer .more-info p {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  margin: 15px 0 0 0;
+}
+footer .more-info .row {
+  margin-top: 15px;
+}
+footer .more-info .row ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+footer .more-info .row ul li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+footer .more-info .row ul li a {
+  text-decoration: none;
+}
+footer .more-info .row ul li a .fab {
+  position: relative;
+  display: block;
+  color: silver;
+  font-size: 50px;
+  transition: color 900ms;
+}
+footer .more-info .row ul li a .fab:hover {
+  color: black;
+}
+/* style of button to save actual exchange rates */
+.save-actual-exchcange-rates,
+.get-exchange-rates-from-local-storage {
+  position: absolute;
+  right: 2.5%;
+  top: 50%;
+  transform: translate(-2.5%, -50%);
+  width: 60px;
+  height: 60px;
+  background: #999;
+  border-radius: 50%;
+  border: 5px solid #444;
+  outline: none;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  animation-name: button-save;
+  animation-iteration-count: infinite;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
+}
+/* modal to save actual exchange rates */
+.modal-to-save-exchange-rates {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  width: 500px;
+  height: 420px;
+  border: 3px solid #444;
+  border-radius: 5px;
+  background: white;
+  z-index: 999;
+}
+.modal-to-save-exchange-rates::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: #50a9c7;
+  z-index: -1;
+}
+.modal-to-save-exchange-rates h1 {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  line-height: 100px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+.modal-to-save-exchange-rates p {
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 22.5px;
+}
+.modal-to-save-exchange-rates .save-exchange-rates,
+.modal-to-save-exchange-rates .delete-exchange-rates,
+.modal-to-save-exchange-rates .close-modal {
+  width: 100px;
+  height: 35px;
+  margin-left: 7.5px;
+  border: none;
+  background: #444;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+/* ul list with exchange rates which user saved */
+.exchange-rates {
+  margin: 0;
+  padding: 0;
+}
+.exchange-rates li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 5px 0 5px 10px;
+}
+.exchange-rates li img {
+  margin-right: 10px;
+}
+/* rating date when user saved exchange rates */
+.rating-date {
+  display: block;
+  margin: 10px 0 10px 10px;
+  font-family: 'Lato', sans-serif;
+}
+/* Responsive Web Design */
+@media all and (max-width: 950px) {
+  header h1 {
+    font-size: 60px;
+    color: black;
+  }
+  nav ul {
+    justify-content: space-around;
+  }
+  nav ul li {
+    margin: 0;
+  }
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 600px;
+    position: static;
+  }
+  footer .contact {
+    position: static;
+    background: #444444;
+    width: 100%;
+    height: 50%;
+  }
+  footer .contact .header-of-contact-box {
+    margin: 5px 0 20px 0;
+    font-size: 35px;
+  }
+  footer .more-info {
+    position: static;
+    background: #444444;
+    width: 100%;
+    height: 50%;
+    padding: 25px;
+    border-bottom: 3px solid #666;
+  }
+  footer .more-info .header-of-more-info {
+    margin: 5px 0 20px 0;
+    font-size: 35px;
+  }
+  footer .more-info .text {
+    font-size: 21px;
+  }
+  footer .more-info .row {
+    margin-top: 25px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 50px;
+  }
+}
+@media all and (max-width: 884px) {
+  footer .more-info .text {
+    font-size: 18px;
+  }
+  footer .more-info .row {
+    margin-top: 15px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 48px;
+  }
+}
+@media all and (max-width: 725px) {
+  nav {
+    display: block;
+  }
+  nav .date {
+    display: none;
+  }
+  nav ul {
+    width: 100%;
+  }
+}
+@media all and (max-width: 670px) {
+  footer .more-info .text {
+    font-size: 18px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 650px) {
+  header .save-actual-exchcange-rates,
+  header .get-exchange-rates-from-local-storage {
+    display: none;
+  }
+  section .form {
+    width: 500px;
+    height: 350px;
+  }
+  section .form .main-part-form .text {
+    font-size: 18px;
+  }
+  section .form .main-part-form .row-with-main-button {
+    margin-top: 10px;
+  }
+}
+@media all and (max-width: 565px) {
+  section .form {
+    width: 450px;
+    height: 400px;
+  }
+  section .form .main-part-form .text {
+    font-size: 18px;
+  }
+  section .form .main-part-form .row-with-convert-button {
+    margin-top: 50px;
+  }
+  section .form .main-part-form .row-with-main-button {
+    margin-top: 25px;
+  }
+  footer .more-info .text {
+    font-size: 16.5px;
+  }
+  footer .more-info .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 500px) {
+  nav ul li {
+    font-size: 14px;
+  }
+  header h1 {
+    font-size: 40px;
+  }
+  footer .more-info .row {
+    margin-top: 5px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 45px;
+  }
+}
+@media all and (max-width: 475px) {
+  header h1 {
+    font-size: 45px;
+  }
+  header h1::after {
+    width: 80%;
+  }
+  section .form {
+    width: 400px;
+    height: 400px;
+  }
+  section .form .main-part-form .row-with-convert-button {
+    margin-top: 35px;
+  }
+}
+@media all and (max-width: 430px) {
+  nav ul li {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: 1px;
+  }
+  header h1::after {
+    width: 0;
+  }
+  section .form {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+  }
+  section .form ul {
+    height: 15%;
+  }
+  section .form ul li {
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  section .form ul li:hover {
+    background: orange;
+  }
+  section .form ul li:hover::after {
+    top: 5px;
+    left: 40px;
+  }
+  section .form .main-part-form {
+    height: 85%;
+  }
+  section .form .main-part-form h2 {
+    margin: 40px 0 20px 0;
+    font-size: 30px;
+  }
+  section .form .main-part-form p {
+    font-size: 20px;
+    color: white;
+  }
+  section .form .main-part-form form .row label .pln-input {
+    background: none;
+  }
+  section .form .main-part-form form .row label .usd-input,
+  section .form .main-part-form form .row label .eur-input,
+  section .form .main-part-form form .row label .chf-input,
+  section .form .main-part-form form .row label .gbp-input {
+    background: none;
+    color: black;
+  }
+  section .form .main-part-form form .row-with-convert-button {
+    margin-top: 50px;
+  }
+  footer .more-info .text {
+    font-size: 14px;
+  }
+  footer .more-info .row {
+    margin-top: 10px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 40px;
+  }
+}
+@media all and (max-width: 340px) {
+  header h1 {
+    font-size: 35px;
+  }
+  nav ul li {
+    margin: 0 10px 10px 10px;
+    font-size: 14px;
+  }
+  section .form ul li:hover::after {
+    top: 5px;
+    left: 30px;
+  }
+  footer .more-info .text {
+    font-size: 13px;
+  }
+  footer .more-info .row ul li a .fab {
+    font-size: 40px;
+  }
+}
+/* keyframes */
+@keyframes button {
+  0% {
+    opacity: 1;
+    box-shadow: 1px 1px 30px 1px black;
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateZ(50px);
+  }
+}
+@keyframes button-save {
+  0% {
+    opacity: 1;
+    box-shadow: 1px 1px 50px 1px white;
+  }
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 0 #666;
+  }
+}
